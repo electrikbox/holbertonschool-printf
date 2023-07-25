@@ -4,7 +4,6 @@
  * printString - print each char from a string
  * @arg: list of arguments
  * @count: argument for count
- *
  */
 
 void printString(va_list arg, int *count)
@@ -14,9 +13,9 @@ void printString(va_list arg, int *count)
 	if (str == NULL)
 		str = "(null)";
 
-	while(*str)
+	while (*str)
 	{
-		putCharAndCount(*str , count);
+		putCharAndCount(*str, count);
 		str++;
 	}
 }

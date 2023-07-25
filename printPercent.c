@@ -10,6 +10,7 @@
 void printPercent(va_list arg, int *count)
 {
 	char c = va_arg(arg, int);
+
 	c = '%';
 
 	putCharAndCount(c, count);
