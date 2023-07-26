@@ -25,6 +25,9 @@ int _printf(const char *format, ...)
 				func(listOfArgs, &count);
 			else
 			{
+				if (*format == 'C' || *format == 'S')
+					return (-1);
+
 				putCharAndCount('%', &count);
 				putCharAndCount(*format, &count);
 			}
