@@ -6,9 +6,10 @@
  * @count: argument for count
  */
 
-void printString(va_list arg, int *count)
+int printString(va_list arg)
 {
 	char *str;
+	int count = 0;
 
 	str = va_arg(arg, char*);
 
@@ -20,7 +21,9 @@ void printString(va_list arg, int *count)
 
 	while (*str)
 	{
-		putCharAndCount(*str, count);
+		_putchar(*str);
 		str++;
+		count++;
 	}
+	return (count);
 }

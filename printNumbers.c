@@ -6,7 +6,7 @@
  * @count: argument for count
  */
 
-void printNumbers(va_list args, int *count)
+int printNumbers(va_list args)
 {
 	int i;
 	int divide = 1;
@@ -15,7 +15,7 @@ void printNumbers(va_list args, int *count)
 
 	if (num < 0)
 	{
-		putCharAndCount('-', count);
+		_putchar('-');
 		num *= -1;
 	}
 
@@ -25,10 +25,11 @@ void printNumbers(va_list args, int *count)
 
 	while (divide != 0)
 	{
-		putCharAndCount((num / divide) + '0', count);
+		_putchar((num / divide) + '0');
 		num %= divide; /*get next digit*/
 		divide /= 10; /*change divide for next digit*/
 	}
+	return (len);
 }
 
 /**

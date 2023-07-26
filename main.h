@@ -19,19 +19,18 @@
 typedef struct helpconversion
 {
 	char format;
-	void (*function)(va_list, int *);
+	int (*function)(va_list);
 } helpconversion_t;
 
 /* Prototypes*/
 int _printf(const char *format, ...);
 int _putchar(char c);
-void putCharAndCount(char c, int *count);
-void printString(va_list arg, int *count);
-void printCharacter(va_list arg, int *count);
-void printPercent(va_list arg, int *count);
-void printNumbers(va_list arg, int *count);
+int printString(va_list arg);
+int printCharacter(va_list arg);
+int printPercent(va_list arg);
+int printNumbers(va_list arg);
 int getIntegerLength(int num);
 
-void (*getPrintFunc(const char *s))(va_list, int *);
+int (*getPrintFunc(const char *s))(va_list);
 
 #endif

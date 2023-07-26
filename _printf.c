@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	void (*func)(va_list, int*);
+	int (*func)(va_list);
 	va_list listOfArgs;
 
 	va_start(listOfArgs, format);
@@ -22,18 +22,27 @@ int _printf(const char *format, ...)
 			func = getPrintFunc(format);
 
 			if (func)
-				func(listOfArgs, &count);
+			{
+                count += func(listOfArgs);
+            }
 			else
 			{
 				if (*format == 'C' || *format == 'S')
+				{
+					va_end(listOfArgs);
 					return (-1);
+				}
 
-				putCharAndCount('%', &count);
-				putCharAndCount(*format, &count);
+				_putchar('%');
+				_putchar(*format);
+				count += 2;
 			}
 		}
 		else
-			putCharAndCount(*format, &count);
+		{
+			_putchar(*format);
+			count++;
+		}
 		format++;
 	}
 
