@@ -16,9 +16,10 @@
  *
  * Description: will give the function associate to the char
  */
-typedef struct helpconversion {
-    char format;
-    void (*function)(va_list, int *);
+typedef struct helpconversion
+{
+	char format;
+	void (*function)(va_list, int *);
 } helpconversion_t;
 
 /* Prototypes*/
