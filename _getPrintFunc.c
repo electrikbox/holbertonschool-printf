@@ -11,6 +11,8 @@ void (*getPrintFunc(const char *str))(va_list, int*)
 		{'c', printCharacter},
 		{'s', printString},
 		{'%', printPercent},
+		{'d', printNumbers},
+		{'i', printNumbers},
 		{'\0', NULL}
 	};
 
