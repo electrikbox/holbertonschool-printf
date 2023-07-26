@@ -9,6 +9,6 @@
 
 void putCharAndCount(char c, int *count)
 {
-	putchar(c);
+	_putchar(c);
 	(*count)++;
 }
