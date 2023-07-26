@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
  * printNumbers - print Numbers
@@ -16,6 +17,7 @@ int printNumbers(va_list args)
 	if (num < 0)
 	{
 		_putchar('-');
+		len += 1;
 		num *= -1;
 	}
 
@@ -45,7 +47,7 @@ int getIntegerLength(int num)
 	if (num >= 0 && num <= 9)
 		return (1);
 
-	while (num != 0)
+	while (num != 0 && isdigit(num))
 	{
 		num /= 10;
 		len++;
