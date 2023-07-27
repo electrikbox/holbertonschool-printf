@@ -10,12 +10,13 @@
 
 int printNumbers(va_list args)
 {
-	int i, temp, digit, divide = 1, len1 = 0, len2 = 0;
-	int num = va_arg(args, int);
+	int i, temp, digit, divide = 1, len1 = 0, len2 = 0, num = va_arg(args, int);
 
 	if (num == 0)
+	{
+		_putchar('0');
 		return (1);
-
+	}
 	if (num == INT_MIN)
 	{
 		_putchar('-');
@@ -35,7 +36,6 @@ int printNumbers(va_list args)
 		temp /= 10;
 		len1++;
 	}
-
 	divide = 1;
 	for (i = 1; i < len1; i++)
 		divide *= 10;
@@ -49,4 +49,3 @@ int printNumbers(va_list args)
 	}
 	return (len1 + len2);
 }
-
