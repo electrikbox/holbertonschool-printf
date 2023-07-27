@@ -9,11 +9,7 @@
 
 int printPercent(va_list arg)
 {
-	char c = va_arg(arg, int);
-	int count = 1;
-
-	c = '%';
-
-	_putchar(c);
-	return (count);
+	(void) arg;
+	_putchar('%');
+	return (1);
 }

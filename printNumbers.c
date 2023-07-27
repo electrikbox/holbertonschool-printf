@@ -13,6 +13,9 @@ int printNumbers(va_list args)
 	int i, temp, digit, divide = 1, len1 = 0, len2 = 0;
 	int num = va_arg(args, int);
 
+	if (num == 0)
+		return (1);
+
 	if (num == INT_MIN)
 	{
 		_putchar('-');
@@ -20,15 +23,12 @@ int printNumbers(va_list args)
 		num = 147483648;
 		len2 = 2;
 	}
-
 	if (num < 0)
 	{
 		_putchar('-');
 		num *= -1;
 		len2 = 1;
 	}
-
-	/* get n lenght */
 	temp = num;
 	while (temp != 0)
 	{
