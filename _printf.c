@@ -30,8 +30,6 @@ int _printf(const char *format, ...)
 				if (*format == 'C' || *format == 'S' || *format == '\0')
 				{
 					va_end(listOfArgs);
-					if (*format == '\0')
-						return (0);
 					return (-1);
 				}
 				_putchar('%');
