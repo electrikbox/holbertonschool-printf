@@ -3,7 +3,7 @@
 /**
  * printString - print each char from a string
  * @arg: list of arguments
- * @count: argument for count
+ * Return: string length
  */
 
 int printString(va_list arg)

@@ -23,8 +23,8 @@ int _printf(const char *format, ...)
 
 			if (func)
 			{
-                count += func(listOfArgs);
-            }
+				count += func(listOfArgs);
+			}
 			else
 			{
 				if (*format == 'C' || *format == 'S')
