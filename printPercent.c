@@ -3,7 +3,7 @@
 /**
  * printPercent - print a %
  * @arg: list of arguments
- * @count: argument for count
+ * Return: length
  *
  */
 
