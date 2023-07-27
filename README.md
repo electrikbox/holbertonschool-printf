@@ -3,8 +3,13 @@
 ## DESCRIPTION
 
 The printf function allows its user to print a string of characters, a character or a number and many other things requested by the user on the terminal.
-Its syntax is generally printf("format", arg_1, arg_2, ..., arg_n); format being the string of characters contained between the inverted commas ("") and arg_1, etc... being arguments for printing the string of characters.
-In this project, we recreate the printf usually included in the standard <stdio.h> header with its requirements and constraints, using a number of different functions and tool functions to make it as complete as possible.
+Its syntax is generally 
+'printf("format", arg_1, arg_2, ..., arg_n);' 
+
+'format' being the string of characters contained between the inverted commas ("") and 'arg_1', etc... being arguments for printing the string of characters.
+
+In this project, we recreate the printf usually included in the standard '<stdio.h>' header with its requirements and constraints, using a number of different functions and tool functions to make it as complete as possible.
+
 Here's a diagram showing how all the printf code reacts to a command being executed
 ![diagramme](https://media.discordapp.net/attachments/1130868842197962864/1133472065794605147/Capture_decran_2023-07-25_a_20.52.48.png?width=486&height=585)
 
@@ -43,7 +48,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 ## USE THE PROJECT
 
-To test the program, you can use a main.c file containing different instructions. Include the given main.h in your header.
+To test the program, you can use a main.c file containing different instructions. Include the given '"main.h"' in your header.
 In your instructions, start with a prototy of type 
 
 ```c
