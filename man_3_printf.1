@@ -1,12 +1,12 @@
 .TH _printf 3 “Date” “GNU” “_Printf Man Page”
 .SH NAME
 .B _printf
-Function that copies what printf function make in the standard library
+Copy of printf function from standard library
 
 .SH LIBRARY
 _printf use <stdarg.h> <stdlib.h> <unistd.h> <ctype.h> and <limits.h>
 .SH SYNOPSIS
-_printf FORMAT [ARGUMENT]
+_printf FORMAT [ARGUMENT...]
 .PP
 Int _printf(const char *format, …);
 
@@ -19,8 +19,11 @@ _printf() works un the same way as the printf() function. It use variadic functi
 .SH CONVERSION CHARACTERS
 .B The conversion specifier and their meaning are:
 
-.IP -d,i
+.IP -d
 The int argument is converted to decimal notation.
+
+.IP -i
+The int argument is converted to integer notation.
 
 .IP -c
 The int argument is converted to a char, and the resulting character is written.
@@ -30,20 +33,36 @@ The character from the arrayThe string characters are written up to the null cha
 
 .SH RETURN VALUE
 .PP
-Return 1 if number are NULL
+Return length of string, or char or number printed
+.br
+Return 1 if number is NULL or equal to 0
+.br
 Return -1 if error or format NULL
 
 .SH EXAMPLES
 
-.IP -print a string.
-_printf("Let's try to printf a simple sentence.\n");
-_printf("%s\n", "Let's try to printf a simple sentence");
-
-.IP print char.
-_printf("Character:[%c]\n", 'H');
-
-.IP -print integer.
-_printf("%d, %i\n", 2, 5);
+.PP
+print a string.
+.IP
+_printf("Hello, World !\\n");
+.br
+Hello, World !
+.IP
+_printf("%s\\n", "Hello, World !");
+.br
+Hello, World !
+.PP
+print char.
+.IP
+_printf("Character:[%c]\\n", 'H');
+.br
+Character:[H]
+.PP
+print integer.
+.IP
+_printf("%d, %i\\n", 2, 5);
+.br
+2, 5
 
 .SH BUGS
 
@@ -51,6 +70,6 @@ No known bugs.
 
 .SH AUTHOR
 
-T'Servrancx Olivier Ruin Lucie
-
+T'Servrancx Olivier - Ruin Lucie
+.br
 Copyright © 2023 Holberton School Lille
