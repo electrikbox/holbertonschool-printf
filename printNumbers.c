@@ -1,5 +1,6 @@
 #include "main.h"
 #include <ctype.h>
+#include <limits.h>
 
 /**
  * printNumbers - print Numbers
@@ -9,49 +10,49 @@
 
 int printNumbers(va_list args)
 {
-	int i;
+	int i, temp, digit;
 	int divide = 1;
 	int num = va_arg(args, int);
-	int len = getIntegerLength(num);
+	int len1 = 0, len2 = 0;
+
+	if (num == INT_MIN)
+	{
+		_putchar('-');
+		_putchar('2');
+		num = 147483648;
+		len2 = 2;
+	}
 
 	if (num < 0)
 	{
 		_putchar('-');
-		len += 1;
 		num *= -1;
+		len2 = 1;
 	}
 
-	/*change divide with the num len*/
-	for (i = 1; i < len; i++)
-		divide *= 10;
+	/* get n lenght */
+	temp = num;
+	while (temp != 0)
+	{
+		temp /= 10;
+		len1++;
+	}
 
+	/* get higher diviser factor to get all digit: '/ 1000' '/ 100' etc */
+	divide = 1;
+	for (i = 1; i < len1; i++)
+	{
+		divide *= 10;
+	}
+
+	/* print digit, divide factor per 10 to have the next digit at next loop */
 	while (divide != 0)
 	{
-		_putchar((num / divide) + '0');
-		num %= divide; /*get next digit*/
-		divide /= 10; /*change divide for next digit*/
+		digit = num / divide;
+		num %= divide;
+		divide /= 10;
+		_putchar(digit + '0');
 	}
-	return (len);
+	return (len1 + len2);
 }
 
-/**
- * getIntegerLength - get length of an integer
- * @num: given integer
- * Return: length
- */
-
-int getIntegerLength(int num)
-{
-	int len = 0;
-
-	if (num >= 0 && num <= 9)
-		return (1);
-
-	while (num != 0 && isdigit(num))
-	{
-		num /= 10;
-		len++;
-	}
-
-	return (len);
-}
