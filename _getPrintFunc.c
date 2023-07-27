@@ -5,7 +5,7 @@
  * @str: given char *
  * Return: selected function
 */
-void (*getPrintFunc(const char *str))(va_list, int*)
+int (*getPrintFunc(const char *str))(va_list)
 {
 	helpconversion_t formatStructure[] = {
 		{'c', printCharacter},

@@ -7,9 +7,10 @@
  *
  */
 
-void printCharacter(va_list arg, int *count)
+int printCharacter(va_list arg)
 {
 	char c = va_arg(arg, int);
 
-	putCharAndCount(c, count);
+    _putchar(c);
+    return 1;
 }

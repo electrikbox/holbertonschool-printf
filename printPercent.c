@@ -7,11 +7,13 @@
  *
  */
 
-void printPercent(va_list arg, int *count)
+int printPercent(va_list arg)
 {
 	char c = va_arg(arg, int);
+	int count = 1;
 
 	c = '%';
 
-	putCharAndCount(c, count);
+	_putchar(c);
+	return (count);
 }
