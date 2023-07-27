@@ -8,11 +8,13 @@
 
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	int (*func)(va_list);
+	int count = 0, (*func)(va_list);
 	va_list listOfArgs;
 
 	va_start(listOfArgs, format);
+
+	if (format == NULL)
+		return (-1);
 
 	while (*format)
 	{
@@ -22,17 +24,16 @@ int _printf(const char *format, ...)
 			func = getPrintFunc(format);
 
 			if (func)
-			{
 				count += func(listOfArgs);
-			}
 			else
 			{
-				if (*format == 'C' || *format == 'S')
+				if (*format == 'C' || *format == 'S' || *format == '\0')
 				{
 					va_end(listOfArgs);
+					if (*format == '\0')
+						return (0);
 					return (-1);
 				}
-
 				_putchar('%');
 				_putchar(*format);
 				count += 2;
@@ -45,7 +46,6 @@ int _printf(const char *format, ...)
 		}
 		format++;
 	}
-
 	va_end(listOfArgs);
 	return (count);
 }
